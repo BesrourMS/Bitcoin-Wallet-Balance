@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Check Your Bitcoin Wallet Balance</title>
+		<meta name="description" content="Check balance of your bitcoin wallet" />
+		<meta name="author" content="Mohamed Safouan Besrour" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+				<h1>Check Your Bitcoin Wallet <span>Powered By <a href="https://www.facebook.com/Bitcoin.Tunisie" title="Bitcoin Tunisie" target="_blank">Bitcoin Tunisie</a></span></h1>	
+			</header>
+			<section>
+				<form id="theForm" class="simform" autocomplete="off">
+					<div class="simform-inner">
+						<ol class="questions">
+							<li>
+								<span><label for="q1">What's your Bitcoin Address?</label></span>
+								<input id="q1" name="q1" type="text"/>
+							</li>
+						</ol><!-- /questions -->
+						<button class="submit" type="submit">Send answers</button>
+						<div class="controls">
+							<button class="next"></button>
+							<div class="progress"></div>
+							<span class="number">
+								<span class="number-current"></span>
+								<span class="number-total"></span>
+							</span>
+							<span class="error-message"></span>
+						</div><!-- / controls -->
+					</div><!-- /simform-inner -->
+					<span class="final-message"></span>
+				</form><!-- /simform -->			
+			</section><!--
+			<section class="related">
+				<a href="https://in.xapo.com/ref/?c=9HTB8ZF">
+					<img src="xapo-wallet.jpg" />
+					<h3 style="text-align:center;">Create Your Bitcoin Wallet</h3>
+				</a>
+			</section>-->
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/stepsForm.js"></script>
+		<script>
+			var theForm = document.getElementById( 'theForm' );
+
+			new stepsForm( theForm, {
+				onSubmit : function( form ) {
+					// hide form
+					classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+					/*
+					form.submit()
+					or
+					AJAX request (maybe show loading indicator while we don't have an answer..)
+					*/
+
+					// let's just simulate something...
+					var messageEl = theForm.querySelector( '.final-message' );
+					var address = $("#q1").val();
+					$.getJSON('https://api.chain.com/v2/bitcoin/addresses/'+address+'?api-key-id=7a737dd2b19a8b8e073229a1650dece5', function(data){
+						var content = '';
+						$.each(data, function (index, value) {
+					      content=  value.total.balance;
+					 });
+					messageEl.innerHTML = 'Your Balance : '+content+' Satoshi';
+					});
+					classie.addClass( messageEl, 'show' );
+				}
+			} );
+		</script>
+	</body>
+</html>
