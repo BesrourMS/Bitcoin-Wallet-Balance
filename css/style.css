@@ -133,3 +133,43 @@ input:focus,button:focus {
 	opacity: 0.85;
 }
 .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+	h1 {
+	    font-family: 'Raleway';
+	    font-weight: bold;
+	    text-align: center;
+	    font-size: 1.5em;
+	    color: #fff;
+	    margin-top: 3vh;
+	}
+	input {
+	    font-family: 'Lato';
+	    color: #2c3e50;
+	    border: 1px solid #fff;
+	    padding: 15px 10px;
+	    display: block;
+	    text-align: center;
+	    margin: 10px auto;
+	    width: 66%;
+	    text-decoration: none;
+	    cursor: pointer;
+	    font-size: 1em;
+	    font-weight: 500;
+	}
+	.bitcoin{
+	    font-family: 'Lato';
+	    font-size: 0.75em;
+	    color: #dfdfdf;
+	    text-decoration: none;
+	    text-align: center;
+	    width: 25%;
+	    margin: 5vh auto 15px auto;
+	    display: block;
+	}
+}
