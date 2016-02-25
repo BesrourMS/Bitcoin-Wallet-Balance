@@ -108,14 +108,14 @@ a.mainlink:hover, a.nextlink:hover{
 
 /* Input field */
 input {
-	font-family: 'Lato';
+    font-family: 'Lato';
     color: #2c3e50;
     border: 3px solid #fff;
     padding: 15px 10px;
     display: block;
     text-align: center;
     margin: 25px auto;
-    width: 20%;
+    width: 20vh;
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
@@ -132,3 +132,4 @@ input:focus,button:focus {
     color: #2c3e50;
 	opacity: 0.85;
 }
+.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
