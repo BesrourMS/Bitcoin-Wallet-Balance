@@ -67,7 +67,7 @@ $(document).ready(function() {
 				
 				$.getJSON('http://btc.blockr.io/api/v1/address/info/'+address+'', function(data){
 					result= data.data.balance.toString();;
-					content=" <span class='back'><strong >"+result+"</strong> Satoshi</span>";
+					content=" <span class='back'><strong >"+result+"</strong> Bitcoin</span>";
 					$("#balance").empty();
 					$(content).appendTo("#balance");
 				});
