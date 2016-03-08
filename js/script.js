@@ -26,7 +26,7 @@ $(document).ready(function() {
 		var address = $("#bitcoin-address").val();
 		var awel = address.charAt(0);
 		//console.log(awel);
-		if(awel == '1' || awel=='3'){
+		if(awel === '1' || awel ==='3'){
 			var v = check(address);
 			if(v == false){
 				$('#bitcoin-address').val('');
