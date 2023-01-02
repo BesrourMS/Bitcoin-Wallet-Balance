@@ -65,8 +65,8 @@ $(document).ready(function() {
 					});
 				}, 800);
 				
-				$.getJSON('http://btc.blockr.io/api/v1/address/info/'+address+'', function(data){
-					result= data.data.balance.toString();;
+				$.getJSON('https://blockchain.info/q/addressbalance/'+address+'', function(data){
+					result= data.toString();;
 					content=" <span class='back'><strong >"+result+"</strong> Satoshi</span>";
 					$("#balance").empty();
 					$(content).appendTo("#balance");
